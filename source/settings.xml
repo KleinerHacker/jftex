@@ -1,0 +1,33 @@
+<settings>
+  <mirrors>
+    <mirror>
+      <id>prod-pers-all</id> 
+      <mirrorOf>central</mirrorOf> 
+      <url>http://tddmaven01:8081/artifactory/prod-pers-all</url> 
+    </mirror>
+  </mirrors>
+
+
+  <activeProfiles>
+    <activeProfile>prod-pers-all</activeProfile>
+  </activeProfiles>
+
+  <profiles>
+    <profile>
+      <id>prod-pers-all</id>
+      <repositories>
+        <repository>
+          <id>prod-pers-all</id>
+          <url>http://tddmaven01:8081/artifactory/prod-pers-all</url>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>prod-pers-all</id>
+          <url>http://tddmaven01:8081/artifactory/prod-pers-all</url>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+  </profiles>
+
+</settings>

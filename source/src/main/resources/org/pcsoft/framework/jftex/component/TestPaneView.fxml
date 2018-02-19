@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import org.controlsfx.control.PropertySheet?>
+<fx:root type="SplitPane" dividerPositions="1.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.65" fx:controller="org.pcsoft.framework.jftex.component.TestPaneView">
+  <items>
+      <BorderPane fx:id="pnlContent" SplitPane.resizableWithParent="false" />
+      <SplitPane dividerPositions="0.5" minWidth="300.0" orientation="VERTICAL" prefWidth="300.0" SplitPane.resizableWithParent="false">
+         <items>
+            <TreeView fx:id="tvModel" SplitPane.resizableWithParent="false" />
+            <PropertySheet fx:id="pnlProperties" SplitPane.resizableWithParent="false" mode="NAME"/>
+         </items>
+      </SplitPane>
+  </items>
+</fx:root>
