@@ -7,6 +7,9 @@ import javafx.beans.property.StringProperty;
 import javafx.scene.Node;
 import javafx.scene.control.SplitPane;
 
+/**
+ * With this pane you can test other panes and see back model changes.
+ */
 public class TestPane extends SplitPane {
 
     // prevents controller for GC clean

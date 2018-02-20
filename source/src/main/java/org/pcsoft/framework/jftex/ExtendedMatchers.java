@@ -15,6 +15,9 @@ import org.testfx.matcher.base.GeneralMatchers;
 
 import java.util.Objects;
 
+/**
+ * Extended matcher for TestFX with additional useful functions
+ */
 public final class ExtendedMatchers {
 
     public static Matcher<Node> isSelected() {

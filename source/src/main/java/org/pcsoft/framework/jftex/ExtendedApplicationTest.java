@@ -30,6 +30,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * An extended application test class, bassed on TestFX test class, with method to manipulate UI without direct input simulation.
+ */
 public abstract class ExtendedApplicationTest extends ApplicationTest {
 
     protected ExtendedApplicationTest fireMenuItemFX(String query, String... menuItemIds) {

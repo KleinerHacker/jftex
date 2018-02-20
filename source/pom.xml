@@ -3,10 +3,31 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.pcsoft.framework</groupId>
+    <groupId>com.github.kleinerhacker</groupId>
     <artifactId>jftex</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
+    <url>https://github.com/KleinerHacker/jftex</url>
     <name>${project.groupId} - ${project.artifactId}</name>
+    <description>Extension Linrary for JavaFX UI tests, based on TestFX</description>
+    <developers>
+        <developer>
+            <name>KleinerHacker</name>
+            <email>Kl3in3rHack3r@gmail.com</email>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>Apache Licence, Version 2.0</name>
+            <url>http://www.apache.org/licences/LICENCE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:git@github.com:KleinerHacker/jftex.git</connection>
+        <developerConnection>scm:git:git@github.com:KleinerHacker/jftex.git</developerConnection>
+        <url>git@github.com:KleinerHacker/jftex.git</url>
+    </scm>
 
     <build>
         <pluginManagement>
@@ -25,23 +46,44 @@
         </pluginManagement>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>attach-sources</id>
-                        <phase>deploy</phase>
+                        <id>generate-sources</id>
                         <goals>
-                            <goal>jar-no-fork</goal>
+                            <goal>jar</goal>
                         </goals>
+                        <phase>package</phase>
+                        <configuration>
+                            <attach>true</attach>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>generate-javadoc</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <phase>package</phase>
+                        <configuration>
+                            <attach>true</attach>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
                 <configuration>
-                    <skip>true</skip>
+                    <archive>
+                        <manifestEntries>
+                            <Build-Source-Version>1.8</Build-Source-Version>
+                            <Build-Target-Version>1.8</Build-Target-Version>
+                        </manifestEntries>
+                    </archive>
                 </configuration>
             </plugin>
             <!-- ensure build order -->
@@ -60,6 +102,35 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>signer</id>
+            <activation>
+                <property>
+                    <name>signer</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>sign</id>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <phase>verify</phase>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
     <dependencyManagement>
         <dependencies>
@@ -190,4 +261,17 @@
         </dependency>
 
     </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>oss-sonatype-staging</id>
+            <name>OSS Sonatype Staging</name>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+        </repository>
+        <snapshotRepository>
+            <id>oss-sonatype-snapshot</id>
+            <name>OSS Sonatype Snapshot</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
