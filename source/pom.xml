@@ -5,7 +5,7 @@
 
     <groupId>com.github.kleinerhacker</groupId>
     <artifactId>jftex</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <url>https://github.com/KleinerHacker/jftex</url>
     <name>${project.groupId} - ${project.artifactId}</name>
     <description>Extension Linrary for JavaFX UI tests, based on TestFX</description>
