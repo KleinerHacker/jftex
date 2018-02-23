@@ -2,7 +2,7 @@
 JFTex is a library for testing JavaFX applications, based on TestFX.
 
 ## Features
-There are a lot of useful mfeatures. like:
+There are a lot of useful features, like:
 
 __Test without direct input simulation__
 >It means that you can run the Test without mouse is moving or focus must have a JFX Node in pane to test. All values are inserted direct from code into the component. After all you can check your background model or the behavior of your pane components.
