@@ -30,7 +30,7 @@ __Gradle__
 ### Startup with test
 To start you must extends your test class from <code>ExtendedApplicationTest</code> to use directly input without input device simulation. To use extended assertion use class <code>ExtendedMatchers</code> in JUnit test functions.
 
-To use the test pane create a class in test folder and create a main method with extension to <code>Apllication</code> of JavaFX framework. Launch the application and put test pane with your own pane to test and its background model into the scene. Now you can run the test app to run a manually JavaFX UI test.
+To use the test pane create a class in test folder and create a main method with extension to <code>Apllication</code> of JavaFX framework. Launch the application and put <code>TestPane</code> with your own pane to test and its background model into the scene. Now you can run the test app to run a manually JavaFX UI test.
   
 ## Hints
 Please note that the Test Pane based on MVVM-FX so you get a test dependency to a weld container implementation.
