@@ -21,11 +21,11 @@ __Maven__
 ><pre>&lt;dependency>
 >    &lt;groupId>com.github.kleinerhacker&lt;/groupId>
 >    &lt;artifactId>jftex&lt;/artifactId>
->    &lt;version>1.0.0&lt;/version>
+>    &lt;version>3.0.0&lt;/version>
 >&lt;/dependency></pre>
 
 __Gradle__
-><pre>compile group: 'com.github.kleinerhacker', name: 'jftex', version: '1.0.0'</pre>
+><pre>compile group: 'com.github.kleinerhacker', name: 'jftex', version: '3.0.0'</pre>
 
 ### Startup with test
 To start you must extends your test class from <code>ExtendedApplicationTest</code> to use directly input without input device simulation. To use extended assertion use class <code>ExtendedMatchers</code> in JUnit test functions.
