@@ -5,7 +5,7 @@
 
     <groupId>com.github.kleinerhacker</groupId>
     <artifactId>jftex</artifactId>
-    <version>3.0.0</version>
+    <version>3.0.1-SNAPSHOT</version>
     <url>https://github.com/KleinerHacker/jftex</url>
     <name>${project.groupId} - ${project.artifactId}</name>
     <description>Extension Library for JavaFX UI tests, based on TestFX</description>
