@@ -5,7 +5,7 @@
 
     <groupId>com.github.kleinerhacker</groupId>
     <artifactId>jftex</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>3.0.0-SNAPSHOT</version>
     <url>https://github.com/KleinerHacker/jftex</url>
     <name>${project.groupId} - ${project.artifactId}</name>
     <description>Extension Linrary for JavaFX UI tests, based on TestFX</description>
@@ -35,10 +35,10 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>2.3.2</version>
+                    <version>3.8.1</version>
                     <configuration>
-                        <source>1.8</source>
-                        <target>1.8</target>
+                        <source>11</source>
+                        <target>11</target>
                         <encoding>UTF-8</encoding>
                     </configuration>
                 </plugin>
@@ -62,6 +62,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.1.0</version>
                 <executions>
                     <execution>
                         <id>generate-javadoc</id>
@@ -160,22 +161,47 @@
             <dependency>
                 <groupId>org.controlsfx</groupId>
                 <artifactId>controlsfx</artifactId>
-                <version>8.40.12</version>
+                <version>11.0.0</version>
             </dependency>
             <dependency>
-                <groupId>de.saxsys</groupId>
-                <artifactId>mvvmfx</artifactId>
-                <version>1.5.2</version>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-base</artifactId>
+                <version>11.0.2</version>
+                <scope>provided</scope>
             </dependency>
             <dependency>
-                <groupId>de.saxsys</groupId>
-                <artifactId>mvvmfx-cdi</artifactId>
-                <version>1.5.2</version>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-fxml</artifactId>
+                <version>11.0.2</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-controls</artifactId>
+                <version>11.0.2</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-graphics</artifactId>
+                <version>11.0.2</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-swing</artifactId>
+                <version>11.0.2</version>
+                <scope>provided</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
 
     <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>jfex-mvvm</artifactId>
+            <version>3.0.0-SNAPSHOT</version>
+        </dependency>
 
         <!-- logging -->
         <dependency>
@@ -230,34 +256,36 @@
             <artifactId>controlsfx</artifactId>
         </dependency>
         <dependency>
-            <groupId>de.saxsys</groupId>
-            <artifactId>mvvmfx</artifactId>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-base</artifactId>
         </dependency>
         <dependency>
-            <groupId>de.saxsys</groupId>
-            <artifactId>mvvmfx-cdi</artifactId>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-swing</artifactId>
         </dependency>
 
         <!-- test -->
         <dependency>
             <groupId>org.testfx</groupId>
             <artifactId>testfx-junit</artifactId>
-            <version>4.0.4-alpha</version>
+            <version>4.0.15-alpha</version>
         </dependency>
         <dependency>
             <groupId>org.testfx</groupId>
             <artifactId>testfx-core</artifactId>
-            <version>4.0.4-alpha</version>
-        </dependency>
-        <dependency>
-            <groupId>org.testfx</groupId>
-            <artifactId>testfx-legacy</artifactId>
-            <version>4.0.4-alpha</version>
-        </dependency>
-        <dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest-all</artifactId>
-            <version>1.3</version>
+            <version>4.0.15-alpha</version>
         </dependency>
 
     </dependencies>

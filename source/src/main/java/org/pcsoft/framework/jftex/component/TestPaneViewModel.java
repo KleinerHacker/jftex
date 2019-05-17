@@ -1,13 +1,13 @@
 package org.pcsoft.framework.jftex.component;
 
-import de.saxsys.mvvmfx.ViewModel;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.Node;
+import org.pcsoft.framework.jfex.mvvm.FxmlViewModel;
 
-public class TestPaneViewModel implements ViewModel {
+public class TestPaneViewModel implements FxmlViewModel {
     private final ObjectProperty<Node> node = new SimpleObjectProperty<>();
     private final ObjectProperty<Object> model = new SimpleObjectProperty<>();
     private final StringProperty packageName = new SimpleStringProperty();

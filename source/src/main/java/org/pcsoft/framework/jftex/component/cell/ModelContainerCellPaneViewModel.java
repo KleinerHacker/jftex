@@ -1,13 +1,13 @@
 package org.pcsoft.framework.jftex.component.cell;
 
-import org.pcsoft.framework.jftex.type.ModelContainer;
-import de.saxsys.mvvmfx.ViewModel;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import org.pcsoft.framework.jfex.mvvm.FxmlViewModel;
+import org.pcsoft.framework.jftex.type.ModelContainer;
 
-public class ModelContainerCellPaneViewModel implements ViewModel {
+public class ModelContainerCellPaneViewModel implements FxmlViewModel {
     private final StringProperty fieldName = new SimpleStringProperty(), className = new SimpleStringProperty();
     private final BooleanProperty $null = new SimpleBooleanProperty();
 

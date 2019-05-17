@@ -1,11 +1,10 @@
 package org.pcsoft.framework.jftex.component;
 
-import de.saxsys.mvvmfx.FluentViewLoader;
-import de.saxsys.mvvmfx.ViewTuple;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.Node;
 import javafx.scene.control.SplitPane;
+import org.pcsoft.framework.jfex.mvvm.Fxml;
 
 /**
  * With this pane you can test other panes and see back model changes.
@@ -18,8 +17,8 @@ public class TestPane extends SplitPane {
     private final TestPaneViewModel viewModel;
 
     public TestPane() {
-        final ViewTuple<TestPaneView, TestPaneViewModel> viewTuple = FluentViewLoader.fxmlView(TestPaneView.class).root(this).load();
-        controller = viewTuple.getCodeBehind();
+        final Fxml.FxmlTuple<TestPaneView, TestPaneViewModel> viewTuple = Fxml.from(TestPaneView.class).withRoot(this).load();
+        controller = viewTuple.getViewController();
         viewModel = viewTuple.getViewModel();
     }
 

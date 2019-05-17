@@ -1,11 +1,10 @@
 package org.pcsoft.framework.jftex.component.cell;
 
-import org.pcsoft.framework.jftex.type.ModelContainer;
-import de.saxsys.mvvmfx.FluentViewLoader;
-import de.saxsys.mvvmfx.ViewTuple;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.scene.layout.VBox;
+import org.pcsoft.framework.jfex.mvvm.Fxml;
+import org.pcsoft.framework.jftex.type.ModelContainer;
 
 public class ModelContainerCellPane extends VBox {
     private final ObjectProperty<ModelContainer> modelContainer = new SimpleObjectProperty<>();
@@ -15,9 +14,9 @@ public class ModelContainerCellPane extends VBox {
     private final ModelContainerCellPaneView controller;
 
     public ModelContainerCellPane() {
-        final ViewTuple<ModelContainerCellPaneView, ModelContainerCellPaneViewModel> viewTuple =
-                FluentViewLoader.fxmlView(ModelContainerCellPaneView.class).root(this).load();
-        controller = viewTuple.getCodeBehind();
+        final Fxml.FxmlTuple<ModelContainerCellPaneView, ModelContainerCellPaneViewModel> viewTuple =
+                Fxml.from(ModelContainerCellPaneView.class).withRoot(this).load();
+        controller = viewTuple.getViewController();
 
         modelContainer.addListener(o -> viewTuple.getViewModel().updateProperties(modelContainer.get()));
     }

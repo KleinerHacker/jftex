@@ -1,15 +1,9 @@
 package org.pcsoft.framework.jftex.component;
 
-import org.pcsoft.framework.jftex.component.cell.tree_view.ModelContainerTreeCell;
-import org.pcsoft.framework.jftex.tree.ModelTreeItem;
-import org.pcsoft.framework.jftex.type.ModelContainer;
-import de.saxsys.mvvmfx.FxmlView;
-import de.saxsys.mvvmfx.InjectViewModel;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeItem;
@@ -22,20 +16,17 @@ import org.controlsfx.control.PropertySheet;
 import org.controlsfx.property.editor.AbstractPropertyEditor;
 import org.controlsfx.property.editor.DefaultPropertyEditorFactory;
 import org.controlsfx.property.editor.PropertyEditor;
+import org.pcsoft.framework.jfex.mvvm.FxmlView;
+import org.pcsoft.framework.jftex.component.cell.tree_view.ModelContainerTreeCell;
+import org.pcsoft.framework.jftex.tree.ModelTreeItem;
+import org.pcsoft.framework.jftex.type.ModelContainer;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.ResourceBundle;
-import java.util.Set;
+import java.util.*;
 
-public class TestPaneView implements FxmlView<TestPaneViewModel>, Initializable {
+public class TestPaneView extends FxmlView<TestPaneViewModel> {
 
     @FXML
     private TreeView<ModelContainer> tvModel;
@@ -43,9 +34,6 @@ public class TestPaneView implements FxmlView<TestPaneViewModel>, Initializable 
     private PropertySheet pnlProperties;
     @FXML
     private BorderPane pnlContent;
-
-    @InjectViewModel
-    private TestPaneViewModel viewModel;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
